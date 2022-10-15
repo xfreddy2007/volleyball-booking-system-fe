@@ -4,6 +4,5 @@ node_modules
 .next
 .vscode
 public
-./stylus
+./styles
 !.eslintrc.js
-!.storybook
