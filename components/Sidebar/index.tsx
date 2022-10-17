@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
@@ -6,11 +7,10 @@ import NavHome from '@/assets/icons/icon-volleyball-nav-home.png';
 import NavEvent from '@/assets/icons/icon-volleyball-nav-event.png';
 import NavCalendar from '@/assets/icons/icon-volleyball-nav-calendar.png';
 import NavUser from '@/assets/icons/icon-volleyball-nav-user.png';
-import style from './Sidebar.module.scss';
 
 const Sidebar: React.FC = () => {
   return (
-    <nav className={style.root}>
+    <nav className="font-arial fixed left-0 top-0 flex h-screen w-[210px] flex-col gap-y-4 bg-yellow px-8 py-4 text-navy md:w-[300px] md:gap-y-6 md:py-8 lg:gap-y-8 lg:px-12">
       <h2 className="default-h4 font-black text-red">排球Queue</h2>
       <Link href="/">
         <a>
@@ -42,4 +42,4 @@ const Sidebar: React.FC = () => {
   );
 };
 
-export default React.memo(Sidebar);
+export default Sidebar;
