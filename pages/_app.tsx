@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import '../styles/globals.scss';
+import Sidebar from '@/components/Sidebar';
+import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
@@ -24,6 +25,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
           rel="icon"
         />
       </Head>
+      <Sidebar />
       <Component {...pageProps} />
     </>
   );
