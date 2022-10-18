@@ -1,11 +1,14 @@
+/* eslint-disable import/no-named-as-default */
 import Head from 'next/head';
 import Sidebar from '@/components/Sidebar';
 import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
+import store from '@/store/store';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <title>排球Queue</title>
         <meta property="og:title" content="排球Queue" />
@@ -27,7 +30,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       </Head>
       <Sidebar />
       <Component {...pageProps} />
-    </>
+    </Provider>
   );
 };
 
