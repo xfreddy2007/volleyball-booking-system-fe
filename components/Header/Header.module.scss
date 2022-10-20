@@ -1,0 +1,9 @@
+.container {
+  grid-template-areas: 'headIcon headIcon headIcon . headMenu headMenu headMenu headMenu . . . .';
+}
+.icon {
+  grid-area: headIcon;
+}
+.menu {
+  grid-area: headMenu;
+}

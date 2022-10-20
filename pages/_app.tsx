@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import Head from 'next/head';
-import Sidebar from '@/components/Sidebar';
+import Header from '@/components/Header';
 import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
@@ -28,7 +28,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
           rel="icon"
         />
       </Head>
-      <Sidebar />
+      <Header />
       <Component {...pageProps} />
     </Provider>
   );
