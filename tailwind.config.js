@@ -43,6 +43,19 @@ module.exports = {
         '.font-source-code': { 'font-family': "'Source Code Pro', monospace, sans-serif" },
       });
 
+      // add grid-area jit mode
+      try {
+        // 這段會讓 vscode tailwindcss extensions crash, 加個 try cache 就正常了
+        const newMatchUtilities = {
+          'grid-area': (value) => ({
+            gridArea: value,
+          }),
+        };
+        matchUtilities(newMatchUtilities);
+      } catch (error) {
+        // eslint-disable-line
+      }
+
       // Log in state css prefix
       addVariant('data-loggedin', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => `.${e(`data-loggedin${separator}${className}`)}[data-loggedin="true"]`);

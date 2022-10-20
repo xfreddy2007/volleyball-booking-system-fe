@@ -22,4 +22,5 @@ export interface NetField {
     female: number;
   };
   seasonalPosition: number;
+  seansonalMember: string[];
 }

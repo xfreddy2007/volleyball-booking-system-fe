@@ -1,0 +1,22 @@
+.menuItem {
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.25rem;
+    width: 100%;
+    background: linear-gradient(0deg, #0c2f68, #0c2f68);
+    transition: transform 0.5s;
+    transform-origin: center;
+    transform: scaleX(0);
+  }
+  &[data-select='true']:after {
+    transform: scaleX(1);
+  }
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
