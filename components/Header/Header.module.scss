@@ -1,9 +1,51 @@
+.root {
+  @apply fixed left-0 top-0 h-[48px] w-full bg-yellow;
+}
 .container {
-  grid-template-areas: 'headIcon headIcon headIcon . headMenu headMenu headMenu headMenu . . . .';
+  grid-template-areas: 'HamburgerIcon HamburgerIcon headIcon headIcon headIcon headIcon headIcon headIcon headIcon headIcon . .';
+  @include md {
+    grid-template-areas: 'headIcon headIcon headIcon . headMenu headMenu headMenu headMenu . . . .';
+  }
 }
 .icon {
+  @apply h-[48px] text-center text-xl font-black leading-[48px] text-red;
   grid-area: headIcon;
+  @include md {
+    @apply text-left;
+  }
 }
 .menu {
+  @apply hidden;
   grid-area: headMenu;
+  @include md {
+    @apply flex justify-center gap-x-2;
+  }
+}
+
+.hambugerIcon {
+  @apply flex cursor-pointer flex-col justify-center;
+  grid-area: HamburgerIcon;
+}
+.hambugerOne {
+  @apply mb-2 h-[3px] w-[32px] bg-navy;
+  transition: transform 0.5s ease, width 0.5s ease;
+  &.open {
+    transform: rotate(45deg) translateY(5px);
+    width: 24px;
+  }
+}
+.hambugerTwo {
+  @apply mb-2 h-[3px] w-[32px] bg-navy;
+  transition: opacity 0.5s ease;
+  &.open {
+    opacity: 0;
+  }
+}
+.hambugerThree {
+  @apply h-[3px] w-[32px] bg-navy;
+  transition: transform 0.5s ease, width 0.5s ease;
+  &.open {
+    transform: rotate(-45deg) translateY(-5px);
+    width: 24px;
+  }
 }

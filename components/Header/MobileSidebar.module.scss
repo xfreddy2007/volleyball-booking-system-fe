@@ -1,0 +1,20 @@
+.root {
+  @apply fixed left-0 top-0 flex h-screen w-[300px] -translate-x-[100%];
+  transition: transform 0.2s ease;
+}
+.open {
+  @apply translate-x-0;
+}
+.closeIcon {
+  @apply absolute right-4 top-4;
+  svg {
+    @apply h-[24px] w-[24px];
+  }
+}
+.menu {
+  @apply h-full w-full bg-yellow px-6 pt-12;
+}
+.modal {
+  @apply absolute left-0 top-0 min-h-full w-full;
+  backdrop-filter: blur(5px);
+}

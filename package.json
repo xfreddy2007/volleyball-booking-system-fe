@@ -17,6 +17,7 @@
     "react-redux": "^8.0.4"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.5.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/cors": "^2.8.12",
     "@types/jest": "^29.1.2",
