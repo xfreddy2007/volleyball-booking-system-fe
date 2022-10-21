@@ -16,6 +16,9 @@ const MobileSidebar: React.FC = () => {
   useEffect(() => {
     if (isDesktop) dispatch(toggleMobileMenuOpen(false));
   }, [dispatch, isDesktop]);
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+  }, [isOpen]);
   return (
     <>
       <div className={classNames('navigation-list__z-index', style.root, isOpen && style.open)}>
