@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { toggleMobileMenuOpen, switchCurrentTab } from '@/store/feature/currentMenu';
 import useMediaMatch from '@/libs/hooks/useMediaMatch';
+import CloseIcon from '@/assets/icons/icon-close.svg';
 import { menuData } from '.';
 import LinkItem from './LinkItem';
 import style from './MobileSidebar.module.scss';
@@ -18,6 +19,9 @@ const MobileSidebar: React.FC = () => {
   return (
     <>
       <div className={classNames('navigation-list__z-index', style.root, isOpen && style.open)}>
+        <div className={style.closeIcon} onClick={() => dispatch(toggleMobileMenuOpen(false))}>
+          <CloseIcon />
+        </div>
         <div className={style.menu}>
           {menuData.map((item, idx) => {
             return (
