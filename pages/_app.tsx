@@ -1,6 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 import Head from 'next/head';
 import Header from '@/components/Header';
+import MobileSidebar from '@/components/Header/MobileSidebar';
 import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
@@ -29,6 +30,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         />
       </Head>
       <Header />
+      <MobileSidebar />
       <Component {...pageProps} />
     </Provider>
   );

@@ -6,7 +6,10 @@
 
 // Navigation list index
 .navigation-list__z-index {
-  z-index: 4000 !important;
+  z-index: 5500 !important;
+}
+.navigation-list-modal__z-index {
+  z-index: 5400 !important;
 }
 
 // loading component index

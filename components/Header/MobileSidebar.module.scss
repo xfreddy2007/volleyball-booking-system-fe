@@ -1,0 +1,14 @@
+.root {
+  @apply fixed left-0 top-0 flex h-screen w-[300px] -translate-x-[100%];
+  transition: transform 0.2s ease;
+}
+.open {
+  @apply translate-x-0;
+}
+.menu {
+  @apply h-full w-full bg-yellow p-6;
+}
+.modal {
+  @apply absolute left-0 top-0 min-h-full w-full;
+  backdrop-filter: blur(5px);
+}
