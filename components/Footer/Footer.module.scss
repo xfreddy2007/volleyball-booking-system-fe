@@ -1,0 +1,29 @@
+.root {
+  @apply flex w-full flex-col bg-yellow py-8;
+}
+.container {
+  grid-template-areas:
+    'aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus'
+    'location location location location location location location location location location location location'
+    'help help help help help help help help help help help help'
+    '. . . icon icon icon icon icon icon . . .';
+  @include md {
+    grid-template-areas: 'aboutus aboutus aboutus location location location help help help icon icon icon';
+  }
+}
+.iconContainer {
+  @apply mt-8 flex justify-center gap-4 grid-area-[icon];
+  svg {
+    @apply h-[40px] w-[40px];
+    fill: #0c2f68;
+  }
+  @include md {
+    @apply mt-0 justify-end;
+  }
+}
+.copyright {
+  @apply mt-6 flex justify-center gap-x-2 text-center text-sm text-navy;
+  @include lg {
+    @apply mt-8;
+  }
+}

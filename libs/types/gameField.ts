@@ -23,4 +23,9 @@ export interface NetField {
   };
   seasonalPosition: number;
   seansonalMember: string[];
+  price: {
+    general: number;
+    male: number;
+    female: number;
+  };
 }
