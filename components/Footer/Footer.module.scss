@@ -1,0 +1,18 @@
+.root {
+  @apply flex w-full flex-col bg-yellow py-8;
+}
+.container {
+  grid-template-areas:
+    'aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus aboutus'
+    'location location location location location location location location location location location location'
+    'help help help help help help help help help help help help';
+  @include md {
+    grid-template-areas: '. . . aboutus aboutus location location help help . . .';
+  }
+}
+.copyright {
+  @apply mt-6 flex justify-center gap-x-2 text-center text-sm text-navy;
+  @include lg {
+    @apply mt-8;
+  }
+}

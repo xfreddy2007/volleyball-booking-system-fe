@@ -5,8 +5,6 @@ import { useEffect } from 'react';
 import Loading from '@/components/Loading';
 
 const Home: NextPage = () => {
-  // initial add dark mode class
-  // const playerData = useAppSelector((state) => state.auth);
   const globalLoading = useAppSelector((state) => state.init.globalLoading);
   const dispatch = useAppDispatch();
 

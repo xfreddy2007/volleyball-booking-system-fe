@@ -2,6 +2,7 @@
 import { Suspense } from 'react';
 import Head from 'next/head';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import MobileSidebar from '@/components/Header/MobileSidebar';
 import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
@@ -36,6 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       <Suspense fallback={<Loading />}>
         <Component {...pageProps} />
       </Suspense>
+      <Footer />
     </Provider>
   );
 };
