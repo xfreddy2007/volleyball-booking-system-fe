@@ -1,5 +1,6 @@
 export interface Player {
   id: string;
+  email: string;
   name: string;
   password: string;
   address?: string;
