@@ -1,8 +1,12 @@
 import React, { useState, useCallback } from 'react';
 import classNames from 'classnames';
 import useMediaMatch from '@/libs/hooks/useMediaMatch';
-import FooterList from './FooterList';
+import FacebookIcon from '@/assets/icons/icon-facebook.svg';
+import InstagramIcon from '@/assets/icons/icon-instagram.svg';
+import LinkedInIcon from '@/assets/icons/icon-linkedin.svg';
+import GithubIcon from '@/assets/icons/icon-github.svg';
 import MobileFooterList from './MobileFooterList';
+import FooterList from './FooterList';
 import style from './Footer.module.scss';
 
 const Footer: React.FC = () => {
@@ -53,6 +57,20 @@ const Footer: React.FC = () => {
             </div>
           </>
         )}
+        <div className={style.iconContainer}>
+          <a href="https://www.facebook.com/xfreddy2007" target="_blank" rel="noreferrer">
+            <FacebookIcon />
+          </a>
+          <a href="https://www.instagram.com/xfreddy2007/" target="_blank" rel="noreferrer">
+            <InstagramIcon />
+          </a>
+          <a href="https://www.linkedin.com/in/freddy-liu-515525156/" target="_blank" rel="noreferrer">
+            <LinkedInIcon />
+          </a>
+          <a href="https://github.com/xfreddy2007" target="_blank" rel="noreferrer">
+            <GithubIcon />
+          </a>
+        </div>
       </div>
       <p className={style.copyright}>
         <span>{`© ${new Date().getFullYear()} - Developed by Freddy Liu.`}</span>
