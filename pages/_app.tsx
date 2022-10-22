@@ -1,4 +1,5 @@
 /* eslint-disable import/no-named-as-default */
+import { Suspense } from 'react';
 import Head from 'next/head';
 import Header from '@/components/Header';
 import MobileSidebar from '@/components/Header/MobileSidebar';
@@ -6,6 +7,7 @@ import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import store from '@/store/store';
+import Loading from '@/components/Loading';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
@@ -31,7 +33,9 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       </Head>
       <Header />
       <MobileSidebar />
-      <Component {...pageProps} />
+      <Suspense fallback={<Loading />}>
+        <Component {...pageProps} />
+      </Suspense>
     </Provider>
   );
 };
