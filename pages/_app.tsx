@@ -9,8 +9,15 @@ import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import store from '@/store/store';
 import Loading from '@/components/Loading';
+import { SessionProvider } from 'next-auth/react';
 
-const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+type newAppProps = AppProps & {
+  pageProps: {
+    session: any;
+  };
+};
+
+const MyApp = ({ Component, pageProps: { session, ...pageProps } }: newAppProps): JSX.Element => {
   return (
     <Provider store={store}>
       <Head>
@@ -35,7 +42,9 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       <Header />
       <MobileSidebar />
       <Suspense fallback={<Loading />}>
-        <Component {...pageProps} />
+        <SessionProvider session={session}>
+          <Component {...pageProps} />
+        </SessionProvider>
       </Suspense>
       <Footer />
     </Provider>

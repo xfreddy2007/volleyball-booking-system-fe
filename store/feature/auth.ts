@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Player } from '@/libs/types/player';
+import { Player } from '@/types/player';
 
 const initialState: Player = {
   id: '',
   name: '',
+  email: '',
   password: '',
   address: '',
   seasonalMembership: [],
+  isAdmin: false,
 };
 
 const authSlice = createSlice({

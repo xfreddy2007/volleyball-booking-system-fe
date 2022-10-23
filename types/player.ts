@@ -5,4 +5,5 @@ export interface Player {
   password: string;
   address?: string;
   seasonalMembership: string[];
+  isAdmin: boolean;
 }
