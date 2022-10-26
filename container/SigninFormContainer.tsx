@@ -2,7 +2,7 @@ import React from 'react';
 
 const SigninFormContainer: React.FC = () => {
   return (
-    <div>
+    <div className="w-full">
       <div>sign in container</div>
     </div>
   );

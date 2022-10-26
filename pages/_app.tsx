@@ -39,14 +39,16 @@ const MyApp = ({ Component, pageProps: { session, ...pageProps } }: newAppProps)
           rel="icon"
         />
       </Head>
-      <Header />
-      <MobileSidebar />
-      <Suspense fallback={<Loading />}>
-        <SessionProvider session={session}>
-          <Component {...pageProps} />
-        </SessionProvider>
-      </Suspense>
-      <Footer />
+      <div className="relative flex min-h-screen flex-col">
+        <Header />
+        <MobileSidebar />
+        <Suspense fallback={<Loading />}>
+          <SessionProvider session={session}>
+            <Component {...pageProps} />
+          </SessionProvider>
+        </Suspense>
+        <Footer />
+      </div>
     </Provider>
   );
 };

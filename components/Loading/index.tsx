@@ -12,7 +12,7 @@ export type LoadingProps = JSX.IntrinsicElements['div'] & {
 const Loading: React.FC<LoadingProps> = ({ children, ...rest }) => {
   const globalLoading = useAppSelector((state) => state.init.globalLoading);
   return (
-    <div className={classNames('relative min-h-screen min-w-full', globalLoading && 'pointer-events-none')} {...rest}>
+    <div className={classNames('relative w-full flex-1', globalLoading && 'pointer-events-none')} {...rest}>
       {globalLoading ? (
         <div className="absolute inset-1/2 flex h-[64px] w-[175px] origin-center -translate-x-1/2 items-center">
           <div className={style.iconAnimation}>
