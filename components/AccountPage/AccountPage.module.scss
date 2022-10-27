@@ -1,0 +1,10 @@
+.container {
+  grid-template-areas:
+    'page page page page page page page page page page page page'
+    'nav nav nav nav nav nav nav nav nav nav nav nav';
+  @include lg {
+    grid-template-areas:
+      'breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb'
+      'nav nav nav page page page page page page page page page';
+  }
+}

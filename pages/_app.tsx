@@ -40,14 +40,14 @@ const MyApp = ({ Component, pageProps: { session, ...pageProps } }: newAppProps)
         />
       </Head>
       <div className="relative flex min-h-screen flex-col">
-        <Header />
-        <MobileSidebar />
-        <Suspense fallback={<Loading />}>
-          <SessionProvider session={session}>
+        <SessionProvider session={session}>
+          <Header />
+          <MobileSidebar />
+          <Suspense fallback={<Loading />}>
             <Component {...pageProps} />
-          </SessionProvider>
-        </Suspense>
-        <Footer />
+          </Suspense>
+          <Footer />
+        </SessionProvider>
       </div>
     </Provider>
   );

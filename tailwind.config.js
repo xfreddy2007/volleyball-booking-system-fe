@@ -13,6 +13,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       black: colors.black,
+      gray: colors.gray,
       white: {
         DEFAULT: '#F4EBEC',
       },

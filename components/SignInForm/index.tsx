@@ -11,7 +11,7 @@ const SignInForm: React.FC = () => {
   return (
     <div className={style.root}>
       <h1 className="mb-2 text-3xl font-extrabold text-navy">登入</h1>
-      <div className="flex flex-col items-center justify-center gap-y-6">
+      <div className={style.loginContainer}>
         <button onClick={() => signIn()} className={style.button}>
           <Image src={EmailIcon} width={36} height={36} />
           以Email登入
@@ -28,6 +28,20 @@ const SignInForm: React.FC = () => {
           <Image src={LineIcon} width={36} height={36} />
           以Line帳戶登入
         </button>
+        <p className="text-xs text-[#878787]">
+          <span>用戶進行登入後，則視同同意我們的</span>
+          <span className="underline">
+            <a href="/privacy-policy" target="_blank">
+              隱私政策
+            </a>
+          </span>
+          <span>及</span>
+          <span className="underline">
+            <a href="/terms-n-conditions" target="_blank">
+              條款及細則
+            </a>
+          </span>
+        </p>
       </div>
     </div>
   );

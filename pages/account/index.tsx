@@ -7,6 +7,7 @@ import Loading from '@/components/Loading';
 import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import SignInForm from '@/components/SignInForm';
+import AccountPage from '@/components/AccountPage';
 
 const Account: NextPage = () => {
   // initial add dark mode class
@@ -28,9 +29,6 @@ const Account: NextPage = () => {
         dispatch(setLoading(true));
     }
   }, [dispatch, session, status]);
-  useEffect(() => {
-    console.log(playerData);
-  }, [playerData]);
 
   return (
     <Loading>
@@ -39,6 +37,7 @@ const Account: NextPage = () => {
           <SignInForm />
         </div>
       )}
+      {status === 'authenticated' && <AccountPage />}
     </Loading>
   );
 };

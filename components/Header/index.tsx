@@ -7,6 +7,9 @@ import NavUser from '@/assets/icons/icon-volleyball-nav-user.png';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { switchCurrentTab, toggleMobileMenuOpen } from '@/store/feature/currentMenu';
 import useMediaMatch from '@/libs/hooks/useMediaMatch';
+import Image from 'next/image';
+import UserIcon from '@/assets/icons/icon-user-head.png';
+import { useSession, signOut } from 'next-auth/react';
 import LinkItem from './LinkItem';
 import style from './Header.module.scss';
 
@@ -39,6 +42,9 @@ const Header: React.FC = () => {
   const dispatch = useAppDispatch();
   const isDesktop = useMediaMatch('(min-width: 768px)');
 
+  // get user login info
+  const { data: session } = useSession();
+
   return (
     <nav className={classNames('header__z-index', style.root)}>
       <div className={classNames('grid__container', style.container)}>
@@ -62,6 +68,12 @@ const Header: React.FC = () => {
             );
           })}
         </div>
+        {session && (
+          <button className={style.logoutIcon} onClick={() => signOut()}>
+            <Image src={UserIcon} width={28} height={28} />
+            <span className="ml-2 text-lg font-extrabold text-navy">登出</span>
+          </button>
+        )}
       </div>
     </nav>
   );

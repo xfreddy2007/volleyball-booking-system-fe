@@ -1,8 +1,13 @@
 .root {
-  @apply mx-auto my-auto flex w-[300px] flex-col gap-4 pt-24;
+  @apply mx-auto my-auto mt-24 flex w-[300px] flex-col gap-4 rounded-xl border-navy p-6;
+  border: 2px solid;
+  box-shadow: 10px 10px 30px rgba(20, 20, 20, 0.5);
   @include md {
     @apply w-[350px];
   }
+}
+.loginContainer {
+  @apply flex flex-col items-center justify-center gap-y-6;
 }
 .button {
   @apply flex w-full items-center gap-x-4 rounded bg-[#f0f0f0] px-4 py-1 text-base;
