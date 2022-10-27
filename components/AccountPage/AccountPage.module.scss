@@ -2,9 +2,19 @@
   grid-template-areas:
     'page page page page page page page page page page page page'
     'nav nav nav nav nav nav nav nav nav nav nav nav';
+  &[data-mobile-subnav='true'] {
+    grid-template-areas:
+      'nav nav nav nav nav nav nav nav nav nav nav nav'
+      'page page page page page page page page page page page page';
+  }
   @include lg {
     grid-template-areas:
       'breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb'
       'nav nav nav page page page page page page page page page';
+    &[data-mobile-subnav='true'] {
+      grid-template-areas:
+        'breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb'
+        'nav nav nav page page page page page page page page page';
+    }
   }
 }

@@ -1,0 +1,6 @@
+.link {
+  @apply relative flex cursor-pointer items-center p-4 text-xl font-semibold text-blue;
+  border-left: 2px solid #e1e1e1;
+  border-right: 2px solid #e1e1e1;
+  border-bottom: 2px solid #e1e1e1;
+}
