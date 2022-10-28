@@ -9,15 +9,17 @@ type NavBtnProps = {
   navPlaceholder?: string;
   text: string;
   arrowIcon?: boolean;
+  setPage: () => void;
   callback?: () => void;
 };
 
-const NavBtn: React.FC<NavBtnProps> = ({ className, navPlaceholder, text, arrowIcon, callback }) => {
+const NavBtn: React.FC<NavBtnProps> = ({ className, navPlaceholder, text, arrowIcon, setPage, callback }) => {
   const router = useRouter();
   const onNavClick = useCallback(() => {
+    setPage();
     callback?.();
     router.push('/account', navPlaceholder);
-  }, [callback, navPlaceholder, router]);
+  }, [callback, navPlaceholder, router, setPage]);
   return (
     <button onClick={onNavClick} className={classNames(className, 'justify-between')}>
       <span>{text}</span>

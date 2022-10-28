@@ -11,8 +11,10 @@ interface SessionType {
 const initialState: Player = {
   id: '',
   name: '',
+  gender: 'Male',
   email: '',
   address: '',
+  level: 'none',
   seasonalMembership: [],
   isAdmin: false,
 };

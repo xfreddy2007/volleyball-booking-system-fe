@@ -1,4 +1,4 @@
-export interface GameArena {
+export interface ClubInfo {
   id: string;
   name: string;
   address: string;
@@ -6,16 +6,18 @@ export interface GameArena {
     line?: string;
     facebook?: string;
   };
-  availableNetField: NetField[];
+  availableNetField: Games[];
 }
 
-export interface NetField {
+export interface Games {
   name: string;
-  gameArena: GameArena;
+  clubInfo: ClubInfo;
+  quarter: string;
   startTime: string;
   endTime: string;
   netHeight: 'Male' | 'Female';
   gametype: 'Male' | 'Female' | 'Mixed';
+  level: 'low' | 'medium' | 'mediumHigh' | 'high' | 'none';
   isFemalePrioritized?: boolean;
   availablePosition: {
     male: number;

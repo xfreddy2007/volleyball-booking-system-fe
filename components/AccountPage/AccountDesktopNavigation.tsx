@@ -3,12 +3,26 @@ import React from 'react';
 import NavBtn from './NavBtn';
 import style from './AccountDesktopNavigation.module.scss';
 
-const AccountDesktopNavigation: React.FC = () => {
+type AccountDesktopNavigationProps = {
+  setPage: (state: string) => void;
+};
+
+const AccountDesktopNavigation: React.FC<AccountDesktopNavigationProps> = ({ setPage }) => {
   return (
-    <div className="flex flex-col gap-y-2 grid-area-[nav]">
-      <NavBtn text="帳戶總覽" className={style.link} />
-      <NavBtn text="季打名單" className={style.link} navPlaceholder="/account/seasonalgame" />
-      <NavBtn text="我的報名場次" className={style.link} navPlaceholder="/account/bookedgame" />
+    <div className="flex flex-col gap-y-2 overflow-y-hidden grid-area-[nav]">
+      <NavBtn text="帳戶總覽" className={style.link} setPage={() => setPage('overview')} />
+      <NavBtn
+        text="季打名單"
+        className={style.link}
+        navPlaceholder="/account/seasonalclub"
+        setPage={() => setPage('seasonalClub')}
+      />
+      <NavBtn
+        text="我的報名場次"
+        className={style.link}
+        navPlaceholder="/account/bookedgame"
+        setPage={() => setPage('bookedGame')}
+      />
     </div>
   );
 };

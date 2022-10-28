@@ -10,9 +10,10 @@ import style from './AccountMobileNavigation.module.scss';
 type AccountMobileNavigationProps = {
   navState: string;
   setNavState: (state: string) => void;
+  setPage: (state: string) => void;
 };
 
-const AccountMobileNavigation: React.FC<AccountMobileNavigationProps> = ({ navState, setNavState }) => {
+const AccountMobileNavigation: React.FC<AccountMobileNavigationProps> = ({ navState, setNavState, setPage }) => {
   const router = useRouter();
   return (
     <div
@@ -22,6 +23,7 @@ const AccountMobileNavigation: React.FC<AccountMobileNavigationProps> = ({ navSt
         <button
           className="relative flex cursor-pointer items-center gap-x-2 border-2 border-solid border-[#e1e1e1] p-4 text-xl font-semibold text-blue"
           onClick={() => {
+            setPage('overview');
             router.push('/account');
             setNavState('');
           }}
@@ -34,7 +36,8 @@ const AccountMobileNavigation: React.FC<AccountMobileNavigationProps> = ({ navSt
           <NavBtn
             text="季打名單"
             className={style.link}
-            navPlaceholder="/account/seasonalgame"
+            navPlaceholder="/account/seasonalclub"
+            setPage={() => setPage('seasonalClub')}
             callback={() => setNavState('季打名單')}
             arrowIcon
           />
@@ -42,6 +45,7 @@ const AccountMobileNavigation: React.FC<AccountMobileNavigationProps> = ({ navSt
             text="我的報名場次"
             className={style.link}
             navPlaceholder="/account/bookedgame"
+            setPage={() => setPage('bookedGame')}
             callback={() => setNavState('我的報名場次')}
             arrowIcon
           />

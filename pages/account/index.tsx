@@ -10,7 +10,6 @@ import SignInForm from '@/components/SignInForm';
 import AccountPage from '@/components/AccountPage';
 
 const Account: NextPage = () => {
-  // initial add dark mode class
   const playerData = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   // get user login info
