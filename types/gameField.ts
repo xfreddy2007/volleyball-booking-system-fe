@@ -6,7 +6,7 @@ export interface ClubInfo {
     line?: string;
     facebook?: string;
   };
-  availableNetField: Games[];
+  availableGames: string[];
 }
 
 export interface Games {
@@ -19,15 +19,8 @@ export interface Games {
   gametype: 'Male' | 'Female' | 'Mixed';
   level: 'low' | 'medium' | 'mediumHigh' | 'high' | 'none';
   isFemalePrioritized?: boolean;
-  availablePosition: {
-    male: number;
-    female: number;
-  };
+  availablePosition: number | { male: number; female: number };
   seasonalPosition: number;
   seansonalMember: string[];
-  price: {
-    general: number;
-    male: number;
-    female: number;
-  };
+  price: number | { male: number; female: number };
 }
