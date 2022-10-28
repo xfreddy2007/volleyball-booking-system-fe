@@ -62,6 +62,11 @@ module.exports = {
         modifySelectors(({ className }) => `.${e(`data-loggedin${separator}${className}`)}[data-loggedin="true"]`);
       });
 
+      // data active
+      addVariant('data-active', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => `.${e(`data-active${separator}${className}`)}[data-active="true"]`);
+      });
+
       // Admin user Log in state css prefix
       addVariant('data-admin', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => `.${e(`data-admin${separator}${className}`)}[data-admin="true"]`);

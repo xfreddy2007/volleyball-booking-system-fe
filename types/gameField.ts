@@ -10,6 +10,7 @@ export interface ClubInfo {
 }
 
 export interface Games {
+  id: string;
   name: string;
   clubInfo: ClubInfo;
   quarter: string;

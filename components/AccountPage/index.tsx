@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import useMediaMatch from '@/libs/hooks/useMediaMatch';
 import classNames from 'classnames';
-import Breadcrumb from '../Breadcrumb';
 import AccountDesktopNavigation from './AccountDesktopNavigation';
 import AccountMobileNavigation from './AccountMobileNavigation';
 import AccountOverview from '../AccountOverview';
@@ -24,16 +23,15 @@ const AccountPage: React.FC = () => {
       break;
     case 'overview':
     default:
-      accountPage = <AccountOverview />;
+      accountPage = <AccountOverview setPage={setUserPage} />;
       break;
   }
   const [isMobileInSubNav, setIsMobileInSubNav] = useState('');
   return (
-    <div className="mt-12 h-full w-full pt-8">
+    <div className="mt-12 w-full">
       <div className={classNames('grid__container', style.container)} data-mobile-subnav={!!isMobileInSubNav}>
-        <Breadcrumb />
         {isDesktop ? (
-          <AccountDesktopNavigation setPage={setUserPage} />
+          <AccountDesktopNavigation setPage={setUserPage} page={userPage} />
         ) : (
           <AccountMobileNavigation
             navState={isMobileInSubNav}
@@ -41,7 +39,7 @@ const AccountPage: React.FC = () => {
             setPage={setUserPage}
           />
         )}
-        <div className="h-full grid-area-[page]">{accountPage}</div>
+        <div className="overflow-auto grid-area-[page] lg:mt-16">{accountPage}</div>
       </div>
     </div>
   );

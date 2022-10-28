@@ -1,5 +1,5 @@
 .link {
-  @apply relative flex h-[36px] cursor-pointer items-center text-xl font-semibold leading-[36px] text-blue;
+  @apply relative flex h-[36px] cursor-pointer items-center text-xl font-semibold leading-[36px] text-blue data-active:text-navy;
   &:hover {
     @apply font-extrabold text-navy;
   }

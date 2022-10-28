@@ -17,7 +17,10 @@ const AccountMobileNavigation: React.FC<AccountMobileNavigationProps> = ({ navSt
   const router = useRouter();
   return (
     <div
-      className={classNames('flex flex-col grid-area-[nav]', !navState && 'border-t-2 border-solid border-[#e1e1e1]')}
+      className={classNames(
+        'mt-8 flex flex-col grid-area-[nav]',
+        !navState && 'border-t-2 border-solid border-[#e1e1e1]',
+      )}
     >
       {navState ? (
         <button

@@ -9,11 +9,20 @@ type NavBtnProps = {
   navPlaceholder?: string;
   text: string;
   arrowIcon?: boolean;
+  isSelected?: boolean;
   setPage: () => void;
   callback?: () => void;
 };
 
-const NavBtn: React.FC<NavBtnProps> = ({ className, navPlaceholder, text, arrowIcon, setPage, callback }) => {
+const NavBtn: React.FC<NavBtnProps> = ({
+  className,
+  navPlaceholder,
+  text,
+  isSelected,
+  arrowIcon,
+  setPage,
+  callback,
+}) => {
   const router = useRouter();
   const onNavClick = useCallback(() => {
     setPage();
@@ -21,7 +30,7 @@ const NavBtn: React.FC<NavBtnProps> = ({ className, navPlaceholder, text, arrowI
     router.push('/account', navPlaceholder);
   }, [callback, navPlaceholder, router, setPage]);
   return (
-    <button onClick={onNavClick} className={classNames(className, 'justify-between')}>
+    <button onClick={onNavClick} className={classNames(className, 'justify-between')} data-active={isSelected}>
       <span>{text}</span>
       {arrowIcon && <Image src={ArrowIcon} width={24} height={24} className="rotate-180" />}
     </button>

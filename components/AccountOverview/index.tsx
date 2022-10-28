@@ -1,8 +1,14 @@
 import React from 'react';
 import { Player } from '@/types/player';
 import { useAppSelector } from '@/store/hooks';
+import { pseudoGames } from '@/assets/data/gamePseudoData';
+import GameCard from '../GameCard';
 
-const AccountOverview: React.FC = () => {
+type AccountOverviewProps = {
+  setPage: (state: string) => void;
+};
+
+const AccountOverview: React.FC<AccountOverviewProps> = ({ setPage }) => {
   const playerData = useAppSelector((state) => state.auth);
 
   // gender mapping
@@ -36,8 +42,17 @@ const AccountOverview: React.FC = () => {
         </p>
       </div>
       <div className="my-3 h-[2px] w-full bg-navy" />
-      <h2 className="default-h5 font-arial font-extrabold text-navy">最近參加的球聚</h2>
-      <div className="flex flex-col gap-y-2">page</div>
+      <div className="flex justify-between">
+        <h2 className="default-h5 font-arial font-extrabold text-navy">最近參加的球聚</h2>
+        <button className="text-red" onClick={() => setPage('bookedGame')}>
+          查看所有參加的球聚 &gt;
+        </button>
+      </div>
+      <div className="mt-4 flex flex-col gap-y-4 overflow-y-scroll">
+        {pseudoGames.map((game) => (
+          <GameCard key={game.id} {...game} />
+        ))}
+      </div>
     </div>
   );
 };
