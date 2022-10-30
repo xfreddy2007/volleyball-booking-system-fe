@@ -1,11 +1,16 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Games } from '@/types/gameField';
 
 interface InitialStateType {
   globalLoading: boolean;
+  allGames: Games[];
+  availableGames: Games[];
 }
 const initialState: InitialStateType = {
   globalLoading: true,
+  allGames: [],
+  availableGames: [],
 };
 
 const initSlice = createSlice({

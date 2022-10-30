@@ -3,10 +3,22 @@ import React from 'react';
 import { PlayerBookedGame } from '@/types/player';
 import dayjs from 'dayjs';
 import { dayMap, DayMapProps, netMap, gameTypeMap } from '@/libs/utils/dataMap';
+import { useRouter } from 'next/router';
 
 type GameCardProps = PlayerBookedGame;
 
-const GameCard: React.FC<GameCardProps> = ({ name, clubInfo, quarter, startTime, endTime, netHeight, gametype }) => {
+const GameCard: React.FC<GameCardProps> = ({
+  id,
+  name,
+  clubInfo,
+  quarter,
+  startTime,
+  endTime,
+  netHeight,
+  gametype,
+}) => {
+  const router = useRouter();
+
   // playday
   const playDay = dayjs(startTime).day();
 
@@ -36,7 +48,10 @@ const GameCard: React.FC<GameCardProps> = ({ name, clubInfo, quarter, startTime,
           <span>{`${playStartTime} ~ ${playEndTime}`}</span>
           <span>{`${netMap(netHeight)}${gameTypeMap(gametype)}`}</span>
         </p>
-        <button className="rounded border-[1px] border-solid border-navy px-4 py-2 text-navy transition-all duration-300 hover:bg-navy hover:text-white">
+        <button
+          className="rounded border-[1px] border-solid border-navy px-4 py-2 text-navy transition-all duration-300 hover:bg-navy hover:text-white"
+          onClick={() => router.push({ pathname: '/account/bookedgame/[pid]', query: { pid: id } })}
+        >
           詳細資料
         </button>
       </div>
