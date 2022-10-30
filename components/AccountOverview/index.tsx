@@ -26,8 +26,8 @@ const AccountOverview: React.FC<AccountOverviewProps> = ({ setPage }) => {
   };
   return (
     <div className="w-full">
-      <h1 className="default-h3 font-arial font-extrabold text-navy">{`Hi, ${playerData.name || 'User'}`}</h1>
-      <div className="mt-4 flex">
+      <h1 className="default-h4 font-arial font-extrabold text-navy">{`Hi, ${playerData.name || 'User'}`}</h1>
+      <div className="mt-4 flex flex-col gap-y-2 md:flex-row md:gap-y-0">
         <p className="flex w-1/3 flex-col">
           <span className="text-sm font-bold text-navy">Email</span>
           <span className="text-[#878787]">{playerData.email}</span>
@@ -48,8 +48,8 @@ const AccountOverview: React.FC<AccountOverviewProps> = ({ setPage }) => {
           查看所有參加的球聚 &gt;
         </button>
       </div>
-      <div className="mt-4 flex flex-col gap-y-4 overflow-y-scroll">
-        {pseudoGames.map((game) => (
+      <div className="mt-4 flex flex-col gap-y-4">
+        {pseudoGames.slice(0, 5).map((game) => (
           <GameCard key={game.id} {...game} />
         ))}
       </div>

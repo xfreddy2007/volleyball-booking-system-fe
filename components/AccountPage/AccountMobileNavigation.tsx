@@ -37,19 +37,19 @@ const AccountMobileNavigation: React.FC<AccountMobileNavigationProps> = ({ navSt
       ) : (
         <>
           <NavBtn
-            text="季打名單"
-            className={style.link}
-            navPlaceholder="/account/seasonalclub"
-            setPage={() => setPage('seasonalClub')}
-            callback={() => setNavState('季打名單')}
-            arrowIcon
-          />
-          <NavBtn
             text="我的報名場次"
             className={style.link}
             navPlaceholder="/account/bookedgame"
             setPage={() => setPage('bookedGame')}
             callback={() => setNavState('我的報名場次')}
+            arrowIcon
+          />
+          <NavBtn
+            text="季打名單"
+            className={style.link}
+            navPlaceholder="/account/seasonalclub"
+            setPage={() => setPage('seasonalClub')}
+            callback={() => setNavState('季打名單')}
             arrowIcon
           />
         </>

@@ -21,18 +21,18 @@ const AccountDesktopNavigation: React.FC<AccountDesktopNavigationProps> = ({ pag
           isSelected={page === 'overview'}
         />
         <NavBtn
-          text="季打名單"
-          className={style.link}
-          navPlaceholder="/account/seasonalclub"
-          setPage={() => setPage('seasonalClub')}
-          isSelected={page === 'seasonalClub'}
-        />
-        <NavBtn
           text="我的報名場次"
           className={style.link}
           navPlaceholder="/account/bookedgame"
           setPage={() => setPage('bookedGame')}
           isSelected={page === 'bookedGame'}
+        />
+        <NavBtn
+          text="季打名單"
+          className={style.link}
+          navPlaceholder="/account/seasonalclub"
+          setPage={() => setPage('seasonalClub')}
+          isSelected={page === 'seasonalClub'}
         />
       </div>
     </div>

@@ -3,7 +3,6 @@ import React from 'react';
 import { Games } from '@/types/gameField';
 import dayjs from 'dayjs';
 import { dayMap, DayMapProps, netMap, gameTypeMap } from '@/libs/utils/dataMap';
-import style from './GameCard.module.scss';
 
 type GameCardProps = Games;
 
@@ -12,8 +11,9 @@ const GameCard: React.FC<GameCardProps> = ({ name, clubInfo, quarter, startTime,
   const playDay = dayjs(startTime).day();
 
   // playdate
-  const playMonth = dayjs(startTime).month() + 1;
-  const playDate = dayjs(startTime).date();
+  const playMonth =
+    dayjs(startTime).month() + 1 < 10 ? `0${dayjs(startTime).month() + 1}` : dayjs(startTime).month() + 1;
+  const playDate = dayjs(startTime).date() < 10 ? `0${dayjs(startTime).date()}` : dayjs(startTime).date();
 
   // playtime
   const playStartTime = `${dayjs(startTime).hour()}:${
@@ -23,12 +23,13 @@ const GameCard: React.FC<GameCardProps> = ({ name, clubInfo, quarter, startTime,
     dayjs(endTime).minute() < 10 ? `0${dayjs(endTime).minute()}` : dayjs(endTime).minute()
   }`;
   return (
-    <div className={style.root}>
+    <div className="flex w-full flex-col gap-y-2 rounded-md border-[1px] border-solid border-navy bg-white-pure p-4">
       <div className="flex justify-between">
-        <h3 className={style.name}>{name}</h3>
-        <p>{`${clubInfo.name} ${quarter}`}</p>
+        <h3 className="max-w-[100px] text-lg font-bold text-navy md:max-w-none">{name}</h3>
+        <p className="font-bold">{`${clubInfo.name} ${quarter}`}</p>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="my-2 h-[1px] w-full bg-gray-300" />
+      <div className="flex flex-col justify-between gap-y-2 md:flex-row md:items-center md:gap-y-0">
         <p className="flex gap-x-2">
           <span>{`${playMonth}/${playDate}`}</span>
           <span>{dayMap(playDay as DayMapProps)}</span>
