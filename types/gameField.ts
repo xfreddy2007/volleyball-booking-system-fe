@@ -1,6 +1,7 @@
 export interface ClubInfo {
   id: string;
   name: string;
+  avatar?: string;
   address: string;
   socialMediaGroup?: {
     line?: string;

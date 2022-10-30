@@ -13,7 +13,7 @@ const AccountBookedGame: React.FC = () => {
     }
   }, [showMore]);
   return (
-    <div className="relative w-full transition-all duration-300">
+    <div className="relative w-full">
       <h1 className="default-h4 font-arial font-extrabold text-navy">我的報名場次</h1>
       <div className="my-3 h-[2px] w-full bg-navy" />
       <div className="mt-4 flex flex-col gap-y-4 pb-16">

@@ -1,4 +1,5 @@
-import { Games, ClubInfo } from '@/types/gameField';
+import { ClubInfo } from '@/types/gameField';
+import { PlayerBookedGame, PlayerSeasonalClubMemberShip } from '@/types/player';
 
 export const xindianClub = {
   id: '0001',
@@ -17,7 +18,7 @@ export const pseudoClubs: ClubInfo[] = [
   },
 ];
 
-export const pseudoGames: Games[] = [
+export const pseudoGames: PlayerBookedGame[] = [
   {
     id: '0001',
     name: '新店排球團週五么八場',
@@ -32,6 +33,7 @@ export const pseudoGames: Games[] = [
     seasonalPosition: 15,
     seansonalMember: ['xfreddy2007@gmail.com'],
     price: 260,
+    paid: true,
   },
   {
     id: '0002',
@@ -47,6 +49,7 @@ export const pseudoGames: Games[] = [
     seasonalPosition: 15,
     seansonalMember: ['xfreddy2007@gmail.com'],
     price: 260,
+    paid: false,
   },
   {
     id: '0003',
@@ -62,6 +65,7 @@ export const pseudoGames: Games[] = [
     seasonalPosition: 15,
     seansonalMember: ['xfreddy2007@gmail.com'],
     price: 260,
+    paid: false,
   },
   {
     id: '0004',
@@ -77,6 +81,7 @@ export const pseudoGames: Games[] = [
     seasonalPosition: 15,
     seansonalMember: ['xfreddy2007@gmail.com'],
     price: 260,
+    paid: true,
   },
   {
     id: '0005',
@@ -92,5 +97,57 @@ export const pseudoGames: Games[] = [
     seasonalPosition: 15,
     seansonalMember: ['xfreddy2007@gmail.com'],
     price: 260,
+    paid: true,
+  },
+];
+
+export const pseudoSeasonalClubMembership: PlayerSeasonalClubMemberShip[] = [
+  {
+    id: '0001',
+    name: '新店排球團週五么八場',
+    clubInfo: xindianClub,
+    quarter: '第四季',
+    startTime: 'Fri Oct 28 2022 18:00:00 GMT+0800 (Taipei Standard Time)',
+    endTime: 'Fri Oct 28 2022 20:00:00 GMT+0800 (Taipei Standard Time)',
+    netHeight: 'Male',
+    gametype: 'Mixed',
+    level: 'none',
+    availablePosition: 15,
+    seasonalPosition: 15,
+    seansonalMember: ['xfreddy2007@gmail.com'],
+    price: 260,
+    paid: true,
+  },
+  {
+    id: '0002',
+    name: '新店排球團週四下午場',
+    clubInfo: xindianClub,
+    quarter: '第四季',
+    startTime: 'Thur Oct 27 2022 14:00:00 GMT+0800 (Taipei Standard Time)',
+    endTime: 'Thur Oct 27 2022 16:00:00 GMT+0800 (Taipei Standard Time)',
+    netHeight: 'Male',
+    gametype: 'Mixed',
+    level: 'none',
+    availablePosition: 15,
+    seasonalPosition: 15,
+    seansonalMember: ['xfreddy2007@gmail.com'],
+    price: 260,
+    paid: false,
+  },
+  {
+    id: '0003',
+    name: '新店排球團週三八控場',
+    clubInfo: xindianClub,
+    quarter: '第四季',
+    startTime: 'Wed Oct 26 2022 20:00:00 GMT+0800 (Taipei Standard Time)',
+    endTime: 'Wed Oct 26 2022 22:00:00 GMT+0800 (Taipei Standard Time)',
+    netHeight: 'Male',
+    gametype: 'Mixed',
+    level: 'none',
+    availablePosition: 15,
+    seasonalPosition: 15,
+    seansonalMember: ['xfreddy2007@gmail.com'],
+    price: 260,
+    paid: false,
   },
 ];

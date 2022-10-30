@@ -10,3 +10,11 @@ export interface Player {
   seasonalMembership: string[];
   isAdmin: boolean;
 }
+
+export interface PlayerBookedGame extends Games {
+  paid: boolean;
+}
+
+export interface PlayerSeasonalClubMemberShip extends Games {
+  paid: boolean;
+}
