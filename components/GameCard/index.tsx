@@ -50,7 +50,12 @@ const GameCard: React.FC<GameCardProps> = ({
         </p>
         <button
           className="rounded border-[1px] border-solid border-navy px-4 py-2 text-navy transition-all duration-300 hover:bg-navy hover:text-white"
-          onClick={() => router.push({ pathname: '/account/bookedgame/[pid]', query: { pid: id } })}
+          onClick={() =>
+            router.push({
+              pathname: '/account/bookedgame',
+              query: { gameid: id },
+            })
+          }
         >
           詳細資料
         </button>

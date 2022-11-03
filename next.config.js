@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /** @type {import('next').NextConfig} */
 const path = require('path');
 
@@ -19,6 +20,16 @@ const nextConfig = {
     });
 
     return config;
+  },
+  async exportPathMap(defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
+    return {
+      '/': { page: '/' },
+      '/events': { page: '/events' },
+      '/calendar': { page: '/calendar' },
+      '/account': { page: '/account' },
+      '/account/bookedgame': { page: '/account', query: { title: 'bookedgame' } },
+      '/account/seasonalclub': { page: '/account', query: { title: 'seasonalclub' } },
+    };
   },
 };
 

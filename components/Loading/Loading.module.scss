@@ -33,7 +33,7 @@
 .textAnimation {
   @apply relative ml-2 text-lg;
   &:before {
-    @apply absolute top-0 right-0 h-full w-[36px] bg-white;
+    @apply absolute top-0 right-0 h-full w-[36px] bg-gray-100;
     content: '';
     animation: typewriter steps(4) 2s infinite;
   }
